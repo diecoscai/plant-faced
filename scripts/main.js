@@ -5,22 +5,22 @@ import { CartManager } from './cart-manager.js';
 document.addEventListener('click', (e) => {
     const hamburger = document.querySelector('.hamburger');
     const navList = document.querySelector('.nav-list');
-
-    if(e.target.closest('.hamburger')){
+    
+    if (e.target.closest('.hamburger')) {
         const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
         hamburger.setAttribute('aria-expanded', !isExpanded);
         navList.classList.toggle('active');
-        navList.classList.toggle('open');
-
-        if(!isExpanded){
+        hamburger.classList.toggle('open');
+        
+        if (!isExpanded) {
             navList.querySelector('a').focus();
         }
     }
-
-    if(!e.target.closest('nav') && !e.target.closest('.hamburger')) {
+    
+    if (!e.target.closest('.nav') && !e.target.closest('.hamburger')) {
         hamburger.setAttribute('aria-expanded', 'false');
         navList.classList.remove('active');
-        navList.classList.remove('open');
+        hamburger.classList.remove('open');
     }
 });
 

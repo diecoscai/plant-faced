@@ -53,6 +53,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .product-title {
@@ -109,4 +110,38 @@
     to {
         transform: rotate(360deg);
     }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.pagination button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+    background: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.pagination button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination .active {
+    background: var(--secondary-color);
+    font-weight: bold;
+    transform: scale(1.1);
 }

@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="styles/products.css" />
     <link rel="stylesheet" href="styles/cart.css" />
     <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="stylesheet" href="styles/responsive.css" />
   </head>
   <body>
     <header class="header">
@@ -48,11 +49,11 @@
             >
           </li>
         </ul>
-        <button class="hamburger" aria-label="Menú móvil" role="button">
+        <button class="hamburger" id="hamburger" aria-label="Menú móvil" role="button">
           <span></span>
           <span></span>
           <span></span>
-        </button>
+      </button>
       </nav>
 
       <!-- Logo en el centro -->
@@ -122,6 +123,9 @@
         </div>
 
         <div class="product-grid" id="product-grid" role="list"></div>
+
+        
+        <div class="pagination" id="pagination" role="navigation" aria-label="Navegación de paginación"></div>
 
         <div class="loading-spinner" id="loading-spinner" aria-hidden="true">
           <div class="spinner"></div>
@@ -236,12 +240,13 @@
         </section>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2023 FashionStore. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Plant Faced. Todos los derechos reservados.</p>
       </div>
     </footer>
 
     <script src="scripts/product-catalog.js" type="module"></script>
     <script src="scripts/cart-manager.js" type="module"></script>
+    <script src="scripts/utils.js" type="module"></script>
     <script src="scripts/main.js" type="module"></script>
   </body>
 </html>

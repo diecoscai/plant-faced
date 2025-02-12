@@ -96,21 +96,3 @@
     color: rgba(255, 255, 255, 0.7);
 }
 
-@media (max-width: 768px) {
-    .footer-content {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-section {
-        text-align: center;
-    }
-
-    .footer-title::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .social-links {
-        justify-content: center;
-    }
-}
