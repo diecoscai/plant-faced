@@ -116,10 +116,6 @@ export class ProductCatalog {
     });
 
     this.renderPagination();
-    window.scrollTo({
-      top: document.querySelector("#products").offsetTop,
-      behavior: "smooth",
-    });
   }
 
   // Render pagination controls for navigating through product pages
@@ -172,7 +168,7 @@ export class ProductCatalog {
       pageButton.setAttribute("aria-label", `Página ${i}`);
       pageButton.addEventListener("click", () => {
         this.currentPage = i;
-        window.scrollTo(0, 0);
+        window.scrollTo({ top: document.querySelector(".products").offsetTop, behavior: 'smooth' });
         this.renderProducts();
       });
       paginationContainer.appendChild(pageButton);
@@ -204,6 +200,9 @@ export class ProductCatalog {
       }
     });
     paginationContainer.appendChild(nextButton);
+
+    console.log('hola');
+
   }
 
   // Show or hide the loading spinner
