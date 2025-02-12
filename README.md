@@ -1,6 +1,6 @@
 # Plant Faced - Minimalist Clothing Store
 
-![Plant Faced Logo](assets/images/logo.png) <!-- Add your logo here -->
+![Plant Faced Logo](assets/images/logo.webp)
 
 Plant Faced is a minimalist landing page for a clothing store, designed to showcase technical skills and attention to detail. The project includes an interactive product catalog, a functional shopping cart, and a fully responsive design.
 
@@ -19,12 +19,16 @@ Plant Faced is a minimalist landing page for a clothing store, designed to showc
 ## Project Structure
 plant-faced/
 │
+
 ├── index.html
+
 ├── styles/
+
 ├── scripts/
+
 ├── assets/
-├── README.md
-└── .gitignore
+
+└── README.md
 
 ## Installation
 1. Clone the repository:
