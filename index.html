@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tienda de ropa minimalista y vegana. Moda sostenible, sin crueldad y con diseño atemporal."
+    />
+    <meta name="keywords" content="moda vegana, ropa sostenible, tienda online, moda ética">
+    <meta property="og:title" content="Plant Faced - Moda Vegana">
+    <meta property="og:description" content="Tienda de ropa minimalista y vegana. Moda sostenible, sin crueldad y con diseño atemporal.">
+    <meta property="og:image" content="https://tudominio.com/assets/images/logo.png">
+    <title>Plant Faced - Moda Vegana</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link
+      rel="preload"
+      href="assets/images/logo.png"
+      as="image"
+      media="(min-width: 768px)"
+    />
+    <link rel="preload" href="styles/main.css" as="style" />
+    <link rel="preload" href="scripts/main.js" as="script" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/hero.css" />
+    <link rel="stylesheet" href="styles/products.css" />
+    <link rel="stylesheet" href="styles/cart.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+  </head>
+  <body>
+    <header class="header">
+      <!-- Nav a la izquierda -->
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="/" class="nav-link" aria-label="Inicio">Inicio</a></li>
+          <li>
+            <a href="#products" class="nav-link" aria-label="Productos"
+              >Productos</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="nav-link" aria-label="Contacto"
+              >Contacto</a
+            >
+          </li>
+        </ul>
+        <button class="hamburger" aria-label="Menú móvil" role="button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+
+      <!-- Logo en el centro -->
+      <div class="logo-container">
+        <a href="/" class="logo-link" aria-label="Ir a la página de inicio">
+          <picture>
+            <source srcset="assets/images/logo.webp" type="image/webp" />
+            <img
+              src="assets/images/logo.png"
+              alt="Plant Faced Logo"
+              class="logo"
+              width="100"
+              loading="lazy"
+            />
+          </picture>
+        </a>
+      </div>
+
+      <!-- Carrito a la derecha -->
+      <button class="cart-button" aria-label="Abrir carrito" role="button">
+        🛒 <span id="cart-counter">0</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero" aria-label="Oferta especial de temporada">
+        <div class="hero-section">
+          <h2 class="hero-title">¡Verano 2025!</h2>
+          <p class="hero-text">
+            HASTA 30% DE DESCUENTOS EN COLECCIÓN SELECCIONADA
+          </p>
+          <button
+            class="cta-button"
+            aria-label="Ver colección de ofertas"
+            role="button"
+          >
+            Ver Colección
+          </button>
+        </div>
+      </section>
+
+      <section
+        class="products"
+        id="products"
+        aria-label="Catalogo de productos"
+      >
+        <div class="filters">
+          <input
+            type="text"
+            id="search"
+            class="search-input"
+            placeholder="Buscar productos..."
+            aria-label="Buscar productos"
+          />
+          <select
+            id="category-filter"
+            class="category-filter"
+            aria-label="Filtrar por categoria"
+          >
+            <option value="" disabled selected>Selecciona una categoría</option>
+            <option value="all">Todas las categorías</option>
+            <option value="Camisetas">Camisetas</option>
+            <option value="Buzos">Buzos</option>
+            <option value="Musculosas">Musculosas</option>
+            <option value="Otros">Otros</option>
+          </select>
+        </div>
+
+        <div class="product-grid" id="product-grid" role="list"></div>
+
+        <div class="loading-spinner" id="loading-spinner" aria-hidden="true">
+          <div class="spinner"></div>
+        </div>
+      </section>
+
+      <!-- Cart -->
+      <aside class="cart-sidebar" id="cart" aria-label="Carrito de compras">
+        <div class="cart-header">
+          <h3 class="cart-title">Tu Carrito</h3>
+          <button class="close-cart" aria-label="Cerrar carrito" role="button">
+            &times;
+          </button>
+        </div>
+        <div class="cart-body">
+          <ul class="cart-items" id="cart-items" role="list"></ul>
+          <div class="cart-empty" id="cart-empty">Tu carrito está vacío</div>
+        </div>
+        <div class="cart-footer">
+          <div class="cart-total">
+            <p>Total: $<span id="total-price">0</span></p>
+            <button
+              class="checkout-button"
+              aria-label="Proceder al pago"
+              role="button"
+            >
+              Pagar
+            </button>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer" aria-label="Información de la tienda" lang="es">
+      <div class="footer-content">
+        <section
+          class="footer-section"
+          id="contact"
+          aria-labelledby="contact-title"
+        >
+          <h4 id="contact-title" class="footer-title">Contacto</h4>
+          <ul class="footer-links">
+            <li>
+              <a
+                href="mailto:info@plantfaced.com"
+                aria-label="Enviar correo electrónico"
+                >info@plantfaced.com</a
+              >
+            </li>
+            <li><a href="+598098123123">098 123 123</a></li>
+            <li>
+              <address>Calle Falsa 123,<br />Montevideo, Uruguay</address>
+            </li>
+          </ul>
+        </section>
+
+        <section class="footer-section" aria-labelledby="links-title">
+          <h4 id="links-title" class="footer-title">Enlaces Rapidos</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="#terms" aria-label="Ver términos y condiciones"
+                >Términos y Condiciones</a
+              >
+            </li>
+            <li>
+              <a href="#privacy" aria-label="Ver Políticas de privacidad"
+                >Políticas de Privacidad</a
+              >
+            </li>
+            <li>
+              <a href="#faq" aria-label="Ver preguntas frecuentes"
+                >Preguntas Frecuentes</a
+              >
+            </li>
+          </ul>
+        </section>
+
+        <section class="footer-section" aria-labelledby="social-title">
+          <h4 id="social-title" class="footer-title">Siguenos</h4>
+          <ul class="social-links">
+            <li>
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visitar Facebook"
+              >
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visitar Instagram"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visitar Twitter"
+              >
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 FashionStore. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="scripts/product-catalog.js" type="module"></script>
+    <script src="scripts/cart-manager.js" type="module"></script>
+    <script src="scripts/main.js" type="module"></script>
+  </body>
+</html>
