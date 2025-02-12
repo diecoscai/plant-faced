@@ -20,3 +20,21 @@ document.addEventListener('keydown', (e) => {
         toggleMenu();
     }
 });
+
+// Smoothly scrolls to the products section when the CTA button is clicked
+document.querySelector(".cta-button").addEventListener("click", (e) => {
+    e.preventDefault();
+    document.querySelector("#products").scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  });
+
+  // Closes the hamburger menu when the Escape key is pressed
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      hamburger.setAttribute("aria-expanded", "false");
+      navList.classList.remove("active");
+      hamburger.classList.remove("open");
+    }
+  });
