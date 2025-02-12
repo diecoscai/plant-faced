@@ -7,12 +7,14 @@ export class ProductCatalog {
     this.init();
   }
 
+  // Initialize the product catalog by setting up event listeners and loading products
   async init() {
     this.setupEventListeners();
     await this.loadProducts();
     this.renderProducts();
   }
 
+  // Load products from the API or mock data and render them
   async loadProducts() {
     try {
       this.showLoading(true);
@@ -27,6 +29,7 @@ export class ProductCatalog {
     }
   }
 
+  // Fetch mock products from a JSON file
   async fetchMockProducts() {
     try {
       const response = await fetch("/products.json");
@@ -41,6 +44,7 @@ export class ProductCatalog {
     }
   }
 
+  // Set up event listeners for search and category filter inputs
   setupEventListeners() {
     document.querySelector("#search").addEventListener("input", (e) => {
       this.filterProducts({
@@ -59,6 +63,7 @@ export class ProductCatalog {
       });
   }
 
+  // Filter products based on search term and selected category
   filterProducts({ search, category }) {
     this.filteredProducts = this.products.filter((product) => {
       const matchesSearch = product.name
@@ -72,6 +77,7 @@ export class ProductCatalog {
     this.renderProducts();
   }
 
+  // Render the filtered products to the UI
   renderProducts() {
     const productGrid = document.querySelector("#product-grid");
     productGrid.innerHTML = "";
@@ -116,6 +122,7 @@ export class ProductCatalog {
     });
   }
 
+  // Render pagination controls for navigating through product pages
   renderPagination() {
     const paginationContainer = document.querySelector("#pagination");
     paginationContainer.innerHTML = "";
@@ -123,7 +130,7 @@ export class ProductCatalog {
     const totalPages = Math.ceil(
       this.filteredProducts.length / this.productsPerPage
     );
-    const maxVisibleButtons = 5; // Número máximo de botones visibles
+    const maxVisibleButtons = 5;
     const startPage = Math.max(
       1,
       this.currentPage - Math.floor(maxVisibleButtons / 2)
@@ -199,6 +206,7 @@ export class ProductCatalog {
     paginationContainer.appendChild(nextButton);
   }
 
+  // Show or hide the loading spinner
   showLoading(show) {
     const spinner = document.querySelector("#loading-spinner");
     spinner.computedStyleMap.display = show ? "flex" : "none";
