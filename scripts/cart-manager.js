@@ -146,28 +146,39 @@ export class CartManager {
       const li = document.createElement("li");
       li.dataset.id = item.id;
       li.innerHTML = `
-                <img src="${item.image}" alt="${
-        item.alt
-      }" class="cart-item-image" />
-                <div class="cart-item-info">
-                <h4 class="cart-item-title">${item.name}</h4>
-                <p class="cart-item-price">${item.price.toFixed(2)}</p>
-                </div>
-                <div class="cart-item-quantity">
-                    <div class="quantity-control">
-                        <button class="quantity-button decrease" aria-label="Reducir cantidad">-</button>
-                        <input type="number"
-                                class="quantity-input"
-                                value="${item.quantity}"
-                                min="1"
-                                aria-label="Cantidad"
-                                debounce>
-                        <button class="quantity-button increase" aria-label="Aumentar cantidad">+</button>        
-                    </div>
-                    <button class="remove-item" data-id="${
-                      item.id
-                    }" aria-label="Eliminar producto">&times;</button>
-                </div>
+        <div class="cart-item-container">
+          <img src="${item.image}" alt="${item.alt}" class="cart-item-image" />
+          <div class="cart-item-info">
+            <h4 class="cart-item-title">${item.name}</h4>
+            <div class="cart-item-quantity">
+            <div class="quantity-control">
+            <button class="quantity-button decrease" aria-label="Reducir cantidad">
+                  -
+                </button>
+                <input
+                  type="number"
+                  class="quantity-input"
+                  value="${item.quantity}"
+                  min="1"
+                  aria-label="Cantidad"
+                  debounce
+                />
+                <button class="quantity-button increase" aria-label="Aumentar cantidad">
+                  +
+                </button>
+              </div>
+              <p class="cart-item-price">$${(item.price*item.quantity).toFixed(2)}</p>
+              <button
+                class="remove-item"
+                data-id="${item.id}"
+                aria-label="Eliminar producto"
+              >
+                &times;
+              </button>
+            </div>
+          </div>
+        </div>
+
             `;
       cartItems.appendChild(li);
     });
