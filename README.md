@@ -1,52 +1,57 @@
 # Plant Faced - Minimalist Clothing Store
 
-![Plant Faced Logo](assets/images/logo.webp)
-
-Plant Faced is a minimalist landing page for a clothing store, designed to showcase technical skills and attention to detail. The project includes an interactive product catalog, a functional shopping cart, and a fully responsive design.
+Plant Faced is a minimalist landing page for a clothing store, showcasing technical skills and attention to detail. The project includes an interactive product catalog, a functional shopping cart, and a fully responsive design.
 
 ## Main Features
-- **Product Catalog**: Dynamic filtering and real-time search.
-- **Shopping Cart**: Data persistence with `localStorage`.
+- **Product Catalog**: Dynamic filtering, debounced search, and windowed pagination.
+- **Shopping Cart**: Client-side cart with localStorage persistence.
 - **Responsive Design**: Mobile-first, adaptable to all devices.
-- **Accessibility**: WCAG 2.1 compliant, keyboard navigation, and screen reader support.
-- **Optimization**: WebP images, lazy loading, and efficient CSS animations.
+- **Accessibility**: Keyboard navigation and screen reader support.
+- **Optimization**: WebP images, lazy loading, and CSS animations.
 
 ## Technologies Used
-- **Frontend**: HTML5, CSS3, Vanilla JavaScript.
-- **Tools**: Git, Prettier, ESLint.
-- **Hosting**: TBA.
+- **Framework**: Next.js (App Router) + TypeScript
+- **Styling**: Tailwind CSS
+- **Testing**: Vitest + React Testing Library
+- **Tools**: Git, ESLint, Prettier
+- **Hosting**: TBA
 
 ## Project Structure
-plant-faced/
-│
-
-├── index.html
-
-├── styles/
-
-├── scripts/
-
-├── assets/
-
-└── README.md
+```
+app/              Next.js App Router (layout, page)
+components/       React components (header, hero, catalog, cart, footer)
+lib/              Cart context, product loader, catalog utilities
+types/            TypeScript types (Product, CartItem)
+public/           Static assets (products.json, images)
+```
 
 ## Installation
 1. Clone the repository:
    ```bash
    git clone https://github.com/diecoscai/plant-faced.git
-
    cd plant-faced
-
-   License
-
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+5. Run tests:
+   ```bash
+   npm test
+   ```
 
 ## Credits
 Design and development: Diego Costa.
 
 Icons: Font Awesome.
-
-Contact
-Questions or suggestions? Contact me!
 
 Email: diecoscai@gmail.com
 
