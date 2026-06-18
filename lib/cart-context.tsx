@@ -81,6 +81,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [lastAdded, setLastAdded] = useState<Product | null>(null);
   const [addNotification, setAddNotification] = useState<AddNotification | null>(null);
   const nonceRef = useRef(0);
+  const hydratedRef = useRef(false);
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -96,6 +97,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
+    if (!hydratedRef.current) {
+      hydratedRef.current = true;
+      return;
+    }
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state.items));
     } catch {

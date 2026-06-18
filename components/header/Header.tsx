@@ -87,7 +87,7 @@ export default function Header({ onOpenCart }: HeaderProps) {
             width={100}
             height={100}
             className="w-[100px] h-auto max-w-full object-contain hover:opacity-90"
-            loading="lazy"
+            priority
           />
         </Link>
       </div>

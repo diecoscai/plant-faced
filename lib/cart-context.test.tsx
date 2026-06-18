@@ -153,4 +153,25 @@ describe('useCart', () => {
     expect(result.current.count).toBe(2);
     expect(result.current.total).toBe(80);
   });
+
+  it('initial mount does not overwrite a non-empty stored cart with []', () => {
+    const existing = [{ ...makeProduct({ id: 7, price: 50 }), quantity: 3 }];
+    localStorage.setItem('cart', JSON.stringify(existing));
+
+    const setItemSpy = vi.spyOn(Storage.prototype, 'setItem');
+
+    renderHook(() => useCart(), { wrapper });
+
+    const emptyCartWrites = setItemSpy.mock.calls.filter(
+      ([key, value]) => key === 'cart' && value === '[]'
+    );
+    expect(emptyCartWrites).toHaveLength(0);
+
+    const stored = JSON.parse(localStorage.getItem('cart') ?? '[]');
+    expect(stored).toHaveLength(1);
+    expect(stored[0].id).toBe(7);
+    expect(stored[0].quantity).toBe(3);
+
+    setItemSpy.mockRestore();
+  });
 });

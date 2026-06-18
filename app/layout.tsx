@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description: 'Tienda de ropa minimalista y vegana. Moda sostenible, sin crueldad y con diseño atemporal.',
     images: [
       {
-        url: 'https://tudominio.com/assets/images/logo.png',
+        url: '/assets/images/logo.webp',
       },
     ],
   },
@@ -29,7 +29,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         />
-        <link rel="preload" href="/assets/images/logo.webp" as="image" media="(min-width: 768px)" />
         <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon" />
       </head>
       <body>
