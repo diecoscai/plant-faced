@@ -2,7 +2,7 @@
 
 ## Known preview limitations
 
-- **Hero background image**: Uses absolute path `/assets/images/hero-banner.webp` — broken in preview (needs a running dev server). Worked around with a green gradient wrapper in `.design-sync/previews/Hero.tsx`. The gradient accurately shows the brand green (#3D8D7A) but not the hero photo.
+- **Hero background image**: Uses absolute path `/assets/images/hero-banner.webp` — broken in preview (needs a running dev server). Worked around with a terracotta gradient wrapper in `.design-sync/previews/Hero.tsx`. The gradient accurately shows the brand terracotta (#B85C38) but not the hero photo.
 
 - **Header logo**: Uses `/assets/images/logo.webp` — shows "Plant Faced Logo" alt text in preview. No fix needed for design system use; the agent will see the correct layout and nav.
 

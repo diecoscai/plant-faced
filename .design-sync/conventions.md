@@ -22,8 +22,8 @@ This is a **Tailwind CSS** system. Style with utility classes; no hand-authored 
 
 | Token class | Hex | Used for |
 |---|---|---|
-| `bg-primary` / `text-primary` | `#3D8D7A` | Nav links, header accent, footer background, product titles |
-| `bg-secondary` / `text-secondary` | `#B3D8A8` | Buttons (Add to cart, active states), price text, cart feedback |
+| `bg-primary` / `text-primary` | `#B85C38` | Nav links, header accent, footer background, product titles, CTA buttons |
+| `bg-secondary` / `text-secondary` | `#F2E4D4` | Hero CTA background (cream pill), hover/accent tints |
 
 **Typography:**
 - `font-sans` — body text (`'Segoe UI', system-ui, sans-serif`)
