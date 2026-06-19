@@ -10,7 +10,7 @@ Plant Faced is a minimalist landing page for a clothing store, showcasing techni
 - **Optimization**: WebP images, lazy loading, and CSS animations.
 
 ## Technologies Used
-- **Framework**: Next.js (App Router) + TypeScript
+- **Framework**: React + Vite + TypeScript
 - **Styling**: Tailwind CSS
 - **Testing**: Vitest + React Testing Library
 - **Tools**: Git, ESLint, Prettier
@@ -18,7 +18,7 @@ Plant Faced is a minimalist landing page for a clothing store, showcasing techni
 
 ## Project Structure
 ```
-app/              Next.js App Router (layout, page)
+src/              Vite entrypoint, app shell, global styles
 components/       React components (header, hero, catalog, cart, footer)
 lib/              Cart context, product loader, catalog utilities
 types/            TypeScript types (Product, CartItem)

@@ -1,0 +1,16 @@
+export { default as CartButton } from './header/CartButton';
+export { default as CartFeedback } from './cart/CartFeedback';
+export { default as CartItem } from './cart/CartItem';
+export { default as CartSidebar } from './cart/CartSidebar';
+export { default as Filters } from './catalog/Filters';
+export { default as Footer } from './footer/Footer';
+export { default as Header } from './header/Header';
+export { default as Hero } from './Hero';
+export { default as Nav } from './header/Nav';
+export { default as Pagination } from './catalog/Pagination';
+export { default as ProductCard } from './catalog/ProductCard';
+export { default as ProductCatalog } from './catalog/ProductCatalog';
+export { default as ProductGrid } from './catalog/ProductGrid';
+export { CartProvider, useCart } from '@/lib/cart-context';
+export { PreviewProvider } from './PreviewProvider';
+export type { Product, CartItem as CartItemType } from '@/types/product';

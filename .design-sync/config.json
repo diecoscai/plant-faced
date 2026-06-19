@@ -1,0 +1,35 @@
+{
+  "projectId": "be20a42f-1214-4646-8657-77d2beefb59e",
+  "pkg": "plant-faced",
+  "globalName": "PlantFaced",
+  "shape": "package",
+  "buildCmd": "npm run build:lib",
+  "srcDir": "components",
+  "cssEntry": "dist/lib/styles.css",
+  "tsconfig": "tsconfig.lib.json",
+  "runtimeFontPrefixes": ["Urbanist"],
+  "readmeHeader": ".design-sync/conventions.md",
+  "provider": {
+    "component": "PreviewProvider"
+  },
+  "componentSrcMap": {
+    "CartButton": "components/header/CartButton.tsx",
+    "CartFeedback": "components/cart/CartFeedback.tsx",
+    "CartItem": "components/cart/CartItem.tsx",
+    "CartSidebar": "components/cart/CartSidebar.tsx",
+    "Filters": "components/catalog/Filters.tsx",
+    "Footer": "components/footer/Footer.tsx",
+    "Header": "components/header/Header.tsx",
+    "Hero": "components/Hero.tsx",
+    "Nav": "components/header/Nav.tsx",
+    "Pagination": "components/catalog/Pagination.tsx",
+    "PreviewProvider": null,
+    "ProductCard": "components/catalog/ProductCard.tsx",
+    "ProductCatalog": "components/catalog/ProductCatalog.tsx",
+    "ProductGrid": "components/catalog/ProductGrid.tsx"
+  },
+  "overrides": {
+    "CartSidebar": { "cardMode": "single", "viewport": "420x620" },
+    "Header": { "cardMode": "single", "viewport": "1024x120" }
+  }
+}

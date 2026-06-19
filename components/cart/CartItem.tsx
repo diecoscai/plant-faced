@@ -1,6 +1,3 @@
-'use client';
-
-import Image from 'next/image';
 import { useCart } from '@/lib/cart-context';
 import type { CartItem as CartItemType } from '@/types/product';
 
@@ -30,12 +27,13 @@ export default function CartItem({ item }: CartItemProps) {
       style={{ gridTemplateColumns: '60px 1fr auto' }}
       data-id={item.id}
     >
-      <Image
+      <img
         src={item.image}
         alt={item.name}
         width={60}
         height={60}
         className="w-[60px] h-[60px] object-cover rounded-lg"
+        loading="lazy"
       />
       <div className="flex flex-col justify-center">
         <h4 className="text-base m-0 mb-1">{item.name}</h4>

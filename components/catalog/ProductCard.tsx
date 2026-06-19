@@ -1,8 +1,6 @@
-'use client';
-
-import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { useCart } from '@/lib/cart-context';
+import { getProductDetailPath } from '@/lib/navigation';
 import type { Product } from '@/types/product';
 
 interface ProductCardProps {
@@ -11,6 +9,7 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   const { add } = useCart();
+  const detailPath = getProductDetailPath(product.urlName);
 
   return (
     <div
@@ -25,19 +24,18 @@ export default function ProductCard({ product }: ProductCardProps) {
       "
     >
       <div className="relative w-full h-[200px]">
-        <Image
+        <img
           src={product.image}
           alt={product.name}
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="w-full h-full object-cover"
+          loading="lazy"
         />
       </div>
       <div className="p-6 flex-1 flex flex-col justify-between">
         <h3 className="text-[1.25rem] m-0 mb-2 text-primary">
           {product.name}
         </h3>
-        <p className="text-[1.1rem] text-secondary m-0 mb-4">
+        <p className="text-[1.1rem] text-primary m-0 mb-4">
           ${product.price.toFixed(2)}
         </p>
         <p
@@ -47,37 +45,37 @@ export default function ProductCard({ product }: ProductCardProps) {
           {product.description}
         </p>
         <div className="flex flex-col gap-2">
+          <Link
+            to={detailPath}
+            aria-label={`View details for ${product.name}`}
+            className="
+              border border-primary text-primary
+              py-[0.8rem] px-4
+              rounded-lg
+              text-base text-center no-underline
+              transition-colors duration-300
+              hover:bg-primary hover:text-white
+              focus:outline-2 focus:outline-primary focus:outline-offset-2
+            "
+          >
+            View details
+          </Link>
           <button
             onClick={() => add(product)}
             aria-label={`Add ${product.name} to cart`}
             className="
-              bg-secondary text-white
+              bg-primary text-white
               border-none
               py-[0.8rem] px-4
               rounded-lg
               cursor-pointer
               text-base
               transition-colors duration-300
-              hover:bg-primary
+              hover:bg-primary/80
             "
           >
             Add to cart
           </button>
-          <Link
-            href={`/products/${product.id}`}
-            className="
-              block text-center
-              border border-secondary text-secondary
-              py-[0.8rem] px-4
-              rounded-lg
-              text-base
-              no-underline
-              transition-colors duration-300
-              hover:bg-secondary hover:text-white
-            "
-          >
-            View details
-          </Link>
         </div>
       </div>
     </div>

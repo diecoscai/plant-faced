@@ -30,3 +30,10 @@ tsconfig.tsbuildinfo
 # Ignore user files
 *.user
 *.suo
+
+# design-sync (staged scripts, generated output, machine state — durable files in .design-sync/ ARE committed)
+.ds-sync/
+ds-bundle/
+.design-sync/.cache/
+.design-sync/learnings/
+.design-sync/node_modules
