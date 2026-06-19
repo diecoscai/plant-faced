@@ -1,5 +1,3 @@
-'use client';
-
 import { useState, useEffect, useRef } from 'react';
 import { useCart } from '@/lib/cart-context';
 
@@ -26,7 +24,7 @@ export default function CartFeedback() {
     <div
       role="status"
       aria-live="polite"
-      className="fixed bottom-4 right-4 bg-secondary text-white px-4 py-4 rounded-lg animate-slide-in z-[1100]"
+      className="fixed bottom-4 right-4 bg-primary text-white px-4 py-4 rounded-lg animate-slide-in z-[1100]"
     >
       ✅ {addNotification.product.name} added
     </div>

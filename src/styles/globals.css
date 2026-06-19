@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 120px;
+  }
+
   *,
   *::before,
   *::after {
@@ -17,4 +22,3 @@
     padding-top: 100px; /* header-height */
   }
 }
-

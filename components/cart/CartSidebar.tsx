@@ -1,5 +1,3 @@
-'use client';
-
 import { useEffect } from 'react';
 import { useCart } from '@/lib/cart-context';
 import CartItem from './CartItem';
@@ -62,7 +60,7 @@ export default function CartSidebar() {
           <span id="total-price">${total.toFixed(2)}</span>
         </div>
         <button
-          className="w-full py-4 bg-secondary text-white border-none rounded-lg cursor-pointer transition-colors duration-300 disabled:bg-gray-300 disabled:cursor-not-allowed checkout-button"
+          className="w-full py-4 bg-primary text-white border-none rounded-lg cursor-pointer transition-colors duration-300 hover:bg-primary/85 disabled:bg-gray-300 disabled:cursor-not-allowed checkout-button"
           disabled={items.length === 0}
           aria-label="Checkout"
         >

@@ -1,5 +1,3 @@
-'use client';
-
 import { useState, useEffect, useRef } from 'react';
 import type { Product } from '@/types/product';
 import { filterProducts } from '@/lib/catalog-utils';
@@ -45,7 +43,8 @@ export default function ProductCatalog({ products }: ProductCatalogProps) {
   return (
     <section
       id="products"
-      className="products px-8 py-8 max-w-[1400px] mx-auto"
+      tabIndex={-1}
+      className="products px-8 py-8 max-w-[1400px] mx-auto scroll-mt-header"
       aria-label="Product catalog"
     >
       <Filters

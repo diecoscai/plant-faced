@@ -1,10 +1,15 @@
 import type { Product } from '@/types/product';
-import productsData from '@/public/products.json';
 
 export const CATEGORIES = ['Camisetas', 'Buzos', 'Musculosas'] as const;
 
 export type Category = (typeof CATEGORIES)[number];
 
-export function getProducts(): Product[] {
-  return productsData as unknown as Product[];
+export async function getProducts(): Promise<Product[]> {
+  const response = await fetch('/products.json');
+
+  if (!response.ok) {
+    throw new Error(`Failed to load products: ${response.status}`);
+  }
+
+  return response.json() as Promise<Product[]>;
 }

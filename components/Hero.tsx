@@ -1,15 +1,10 @@
-'use client';
+import { scrollToSection } from '@/lib/navigation';
 
 export default function Hero() {
-  function handleVerColeccion() {
-    const el = document.querySelector('#products');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
   return (
     <section
+      id="home"
+      tabIndex={-1}
       className="
         relative flex items-center
         h-[calc(100vh-100px)]
@@ -19,6 +14,7 @@ export default function Hero() {
         [background-image:url('/assets/images/hero-banner-small.webp')]
         sm:[background-image:url('/assets/images/hero-banner-mobile.webp')]
         md:[background-image:url('/assets/images/hero-banner.webp')]
+        scroll-mt-header
       "
       aria-label="Special seasonal offer"
     >
@@ -49,9 +45,9 @@ export default function Hero() {
           UP TO 30% OFF ON SELECTED COLLECTION
         </p>
         <button
-          onClick={handleVerColeccion}
+          onClick={() => scrollToSection('products')}
           className="
-            bg-secondary text-white
+            bg-secondary text-primary
             px-10 py-4
             border-none rounded-[50px]
             text-[1.1rem]

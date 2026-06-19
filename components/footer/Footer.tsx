@@ -1,4 +1,9 @@
+import { Link, useLocation } from 'react-router-dom';
+import { navLinks, scrollToSection } from '@/lib/navigation';
+
 export default function Footer() {
+  const location = useLocation();
+
   return (
     <footer
       className="bg-primary text-white px-4 py-8 mt-16"
@@ -7,8 +12,9 @@ export default function Footer() {
       <div className="max-w-[1200px] mx-auto grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-8 py-8">
         {/* Contact */}
         <section
-          className="mb-6 p-12 bg-white/5 rounded-lg"
+          className="mb-6 p-12 bg-white/5 rounded-lg scroll-mt-header"
           id="contact"
+          tabIndex={-1}
           aria-labelledby="contact-title"
         >
           <h4
@@ -44,7 +50,7 @@ export default function Footer() {
         </section>
 
         {/* Quick links */}
-        <section
+        <nav
           className="mb-6 p-12 bg-white/5 rounded-lg"
           aria-labelledby="links-title"
         >
@@ -55,35 +61,25 @@ export default function Footer() {
             Quick Links
           </h4>
           <ul className="list-none p-0">
-            <li className="mb-3">
-              <a
-                href="#terms"
-                className="text-white/80 no-underline transition-colors duration-300 hover:text-secondary"
-                aria-label="View terms and conditions"
-              >
-                Terms &amp; Conditions
-              </a>
-            </li>
-            <li className="mb-3">
-              <a
-                href="#privacy"
-                className="text-white/80 no-underline transition-colors duration-300 hover:text-secondary"
-                aria-label="View privacy policy"
-              >
-                Privacy Policy
-              </a>
-            </li>
-            <li className="mb-3">
-              <a
-                href="#faq"
-                className="text-white/80 no-underline transition-colors duration-300 hover:text-secondary"
-                aria-label="View frequently asked questions"
-              >
-                FAQ
-              </a>
-            </li>
+            {navLinks.map((link) => (
+              <li key={link.id} className="mb-3">
+                <Link
+                  to={`/#${link.id}`}
+                  className="text-white/80 no-underline transition-colors duration-300 hover:text-secondary"
+                  aria-label={`Go to ${link.label}`}
+                  onClick={(e) => {
+                    if (location.pathname === '/') {
+                      e.preventDefault();
+                      scrollToSection(link.id);
+                    }
+                  }}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
           </ul>
-        </section>
+        </nav>
 
         {/* Social */}
         <section

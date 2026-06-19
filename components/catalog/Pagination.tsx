@@ -1,5 +1,3 @@
-'use client';
-
 import { getPaginationWindow } from '@/lib/catalog-utils';
 
 interface PaginationProps {
@@ -13,11 +11,11 @@ const btnBase = `
   py-2 px-4 rounded-lg mx-2
   cursor-pointer
   transition-[background-color,transform] duration-300
-  hover:enabled:bg-secondary hover:enabled:scale-105
+  hover:enabled:bg-primary/75 hover:enabled:scale-105
   disabled:bg-[#ccc] disabled:cursor-not-allowed
 `;
 
-const btnActive = `bg-secondary font-bold scale-110`;
+const btnActive = `ring-2 ring-white font-bold scale-110`;
 
 export default function Pagination({
   currentPage,

@@ -1,5 +1,3 @@
-'use client';
-
 import { useCart } from '@/lib/cart-context';
 
 interface CartButtonProps {
@@ -16,7 +14,7 @@ export default function CartButton({ onOpenCart }: CartButtonProps) {
       onClick={onOpenCart}
     >
       🛒
-      <span className="relative inline-flex items-center justify-center w-5 h-5 rounded-full bg-secondary text-white text-xs">
+      <span className="relative inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary text-white text-xs">
         {count}
       </span>
     </button>

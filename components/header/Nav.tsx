@@ -1,13 +1,21 @@
-import Link from 'next/link';
+import { navLinks, type SectionId } from '@/lib/navigation';
 
 interface NavProps {
   isOpen: boolean;
+  activeSection: SectionId | null;
+  onNavigate: (sectionId: SectionId) => void;
   onLinkClick?: () => void;
 }
 
-export default function Nav({ isOpen, onLinkClick }: NavProps) {
+export default function Nav({
+  isOpen,
+  activeSection,
+  onNavigate,
+  onLinkClick,
+}: NavProps) {
   return (
     <ul
+      id="primary-navigation"
       className={[
         'flex gap-4 list-none m-0 p-0',
         'max-md:flex-col max-md:absolute max-md:top-full max-md:left-0',
@@ -16,36 +24,29 @@ export default function Nav({ isOpen, onLinkClick }: NavProps) {
         'md:flex',
       ].join(' ')}
     >
-      <li>
-        <Link
-          href="/"
-          className="text-primary no-underline px-2 py-2 transition-colors duration-300 hover:text-secondary focus:text-secondary focus:outline-2 focus:outline-secondary focus:outline-offset-2"
-          aria-label="Home"
-          onClick={onLinkClick}
-        >
-          Home
-        </Link>
-      </li>
-      <li>
-        <Link
-          href="#products"
-          className="text-primary no-underline px-2 py-2 transition-colors duration-300 hover:text-secondary focus:text-secondary focus:outline-2 focus:outline-secondary focus:outline-offset-2"
-          aria-label="Products"
-          onClick={onLinkClick}
-        >
-          Products
-        </Link>
-      </li>
-      <li>
-        <Link
-          href="#contact"
-          className="text-primary no-underline px-2 py-2 transition-colors duration-300 hover:text-secondary focus:text-secondary focus:outline-2 focus:outline-secondary focus:outline-offset-2"
-          aria-label="Contact"
-          onClick={onLinkClick}
-        >
-          Contact
-        </Link>
-      </li>
+      {navLinks.map((link) => (
+        <li key={link.id}>
+          <a
+            href={`#${link.id}`}
+            className={[
+              'text-primary no-underline px-2 py-2 rounded-md',
+              'transition-colors duration-300',
+              'hover:text-primary/60 focus:text-primary',
+              'focus:outline-2 focus:outline-primary focus:outline-offset-2',
+              activeSection === link.id ? 'text-primary font-semibold underline underline-offset-4' : '',
+            ].join(' ')}
+            aria-label={link.label}
+            aria-current={activeSection === link.id ? 'location' : undefined}
+            onClick={(e) => {
+              e.preventDefault();
+              onNavigate(link.id);
+              onLinkClick?.();
+            }}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
     </ul>
   );
 }

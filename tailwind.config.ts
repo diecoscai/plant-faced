@@ -2,7 +2,7 @@ import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
-    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './lib/**/*.{ts,tsx}',
   ],
@@ -10,11 +10,11 @@ const config: Config = {
     extend: {
       colors: {
         // --primary-color: #3D8D7A  (used for nav links, header accent, footer bg, product titles)
-        primary: '#3D8D7A',
-        // --secondary-color: #B3D8A8  (used for buttons, active states, price text, cart feedback)
-        secondary: '#B3D8A8',
-        // --light-gray: #FBFFE4  (background tint)
-        'light-gray': '#FBFFE4',
+        primary: '#B85C38',
+        // --secondary-color: warm off-white cream (decorative accents, highlights on dark bg)
+        secondary: '#F2E4D4',
+        // --light-gray: warm off-white page background
+        'light-gray': '#FBF5EE',
       },
       fontFamily: {
         // Body font from styles.css — 'Segoe UI', system-ui, sans-serif
