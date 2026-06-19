@@ -2,8 +2,7 @@ export default function Footer() {
   return (
     <footer
       className="bg-primary text-white px-4 py-8 mt-16"
-      aria-label="Información de la tienda"
-      lang="es"
+      aria-label="Store information"
     >
       <div className="max-w-[1200px] mx-auto grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-8 py-8">
         {/* Contact */}
@@ -16,14 +15,14 @@ export default function Footer() {
             id="contact-title"
             className="text-xl mb-4 text-white mt-0 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-[50px] after:h-[2px] after:bg-secondary"
           >
-            Contacto
+            Contact
           </h4>
           <ul className="list-none p-0">
             <li className="mb-3">
               <a
                 href="mailto:info@plantfaced.com"
                 className="text-white/80 no-underline transition-colors duration-300 hover:text-secondary"
-                aria-label="Enviar correo electrónico"
+                aria-label="Send email"
               >
                 info@plantfaced.com
               </a>
@@ -53,34 +52,34 @@ export default function Footer() {
             id="links-title"
             className="text-xl mb-4 text-white mt-0 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-[50px] after:h-[2px] after:bg-secondary"
           >
-            Enlaces Rapidos
+            Quick Links
           </h4>
           <ul className="list-none p-0">
             <li className="mb-3">
               <a
                 href="#terms"
                 className="text-white/80 no-underline transition-colors duration-300 hover:text-secondary"
-                aria-label="Ver términos y condiciones"
+                aria-label="View terms and conditions"
               >
-                Términos y Condiciones
+                Terms &amp; Conditions
               </a>
             </li>
             <li className="mb-3">
               <a
                 href="#privacy"
                 className="text-white/80 no-underline transition-colors duration-300 hover:text-secondary"
-                aria-label="Ver Políticas de privacidad"
+                aria-label="View privacy policy"
               >
-                Políticas de Privacidad
+                Privacy Policy
               </a>
             </li>
             <li className="mb-3">
               <a
                 href="#faq"
                 className="text-white/80 no-underline transition-colors duration-300 hover:text-secondary"
-                aria-label="Ver preguntas frecuentes"
+                aria-label="View frequently asked questions"
               >
-                Preguntas Frecuentes
+                FAQ
               </a>
             </li>
           </ul>
@@ -95,7 +94,7 @@ export default function Footer() {
             id="social-title"
             className="text-xl mb-4 text-white mt-0 relative pb-2 after:absolute after:left-0 after:bottom-0 after:w-[50px] after:h-[2px] after:bg-secondary"
           >
-            Siguenos
+            Follow Us
           </h4>
           <ul className="list-none p-0 flex gap-4">
             <li>
@@ -104,7 +103,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white no-underline transition-colors duration-300 hover:text-secondary text-2xl"
-                aria-label="Visitar Facebook"
+                aria-label="Visit Facebook"
               >
                 <i className="fa-brands fa-facebook" />
               </a>
@@ -115,7 +114,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white no-underline transition-colors duration-300 hover:text-secondary text-2xl"
-                aria-label="Visitar Instagram"
+                aria-label="Visit Instagram"
               >
                 <i className="fa-brands fa-instagram" />
               </a>
@@ -126,7 +125,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white no-underline transition-colors duration-300 hover:text-secondary text-2xl"
-                aria-label="Visitar Twitter"
+                aria-label="Visit Twitter"
               >
                 <i className="fa-brands fa-x-twitter" />
               </a>
@@ -136,7 +135,7 @@ export default function Footer() {
       </div>
 
       <div className="text-center px-4 py-4 border-t border-white/10 mt-8 text-sm text-white/70">
-        <p>&copy; 2025 Plant Faced. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Plant Faced. All rights reserved.</p>
       </div>
     </footer>
   );

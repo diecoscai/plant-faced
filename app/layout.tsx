@@ -7,12 +7,12 @@ import CartSidebar from '@/components/cart/CartSidebar';
 import CartFeedback from '@/components/cart/CartFeedback';
 
 export const metadata: Metadata = {
-  title: 'Plant Faced - Moda Vegana',
-  description: 'Tienda de ropa minimalista y vegana. Moda sostenible, sin crueldad y con diseño atemporal.',
-  keywords: ['moda vegana', 'ropa sostenible', 'tienda online', 'moda ética'],
+  title: 'Plant Faced - Vegan Fashion',
+  description: 'Minimalist and vegan clothing store. Sustainable fashion, cruelty-free and timeless design.',
+  keywords: ['vegan fashion', 'sustainable clothing', 'online store', 'ethical fashion'],
   openGraph: {
-    title: 'Plant Faced - Moda Vegana',
-    description: 'Tienda de ropa minimalista y vegana. Moda sostenible, sin crueldad y con diseño atemporal.',
+    title: 'Plant Faced - Vegan Fashion',
+    description: 'Minimalist and vegan clothing store. Sustainable fashion, cruelty-free and timeless design.',
     images: [
       {
         url: '/assets/images/logo.webp',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es">
+    <html lang="en">
       <head>
         <link
           rel="stylesheet"
@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon" />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <CartProvider>
           <Header />
           {children}

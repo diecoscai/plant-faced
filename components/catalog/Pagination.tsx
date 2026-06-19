@@ -64,16 +64,16 @@ export default function Pagination({
   return (
     <nav
       className="flex justify-center items-center my-8"
-      aria-label="Navegación de paginación"
+      aria-label="Pagination navigation"
       role="navigation"
     >
       <button
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        aria-label="Página anterior"
+        aria-label="Previous page"
         className={btnBase}
       >
-        Anterior
+        Previous
       </button>
 
       {pages.map((page, idx) =>
@@ -85,7 +85,7 @@ export default function Pagination({
           <button
             key={page}
             onClick={() => handlePageChange(page)}
-            aria-label={`Página ${page}`}
+            aria-label={`Page ${page}`}
             aria-current={page === currentPage ? 'page' : undefined}
             className={`${btnBase} ${page === currentPage ? btnActive : ''}`}
           >
@@ -97,10 +97,10 @@ export default function Pagination({
       <button
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        aria-label="Página siguiente"
+        aria-label="Next page"
         className={btnBase}
       >
-        Siguiente
+        Next
       </button>
     </nav>
   );

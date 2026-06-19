@@ -20,7 +20,7 @@ export default function CartSidebar() {
   return (
     <aside
       id="cart"
-      aria-label="Carrito de compras"
+      aria-label="Shopping cart"
       className={[
         'fixed top-0 right-0 w-full max-w-[400px] h-screen bg-white',
         'shadow-[-2px_0_15px_rgba(0,0,0,0.1)] flex flex-col z-[1001]',
@@ -29,10 +29,10 @@ export default function CartSidebar() {
       ].join(' ')}
     >
       <div className="flex justify-between items-center px-6 py-6 border-b border-gray-100 cart-header">
-        <h2 className="text-2xl m-0">Tu Carrito</h2>
+        <h2 className="text-2xl m-0">Your Cart</h2>
         <button
           className="close-cart bg-transparent border-none text-4xl cursor-pointer px-2 py-2 leading-none"
-          aria-label="Cerrar carrito"
+          aria-label="Close cart"
           onClick={closeCart}
         >
           &times;
@@ -45,7 +45,7 @@ export default function CartSidebar() {
             id="cart-empty"
             className="text-center py-8 text-gray-500"
           >
-            Tu carrito está vacío
+            Your cart is empty
           </p>
         ) : (
           <ul id="cart-items" className="list-none p-0 m-0">
@@ -64,9 +64,9 @@ export default function CartSidebar() {
         <button
           className="w-full py-4 bg-secondary text-white border-none rounded-lg cursor-pointer transition-colors duration-300 disabled:bg-gray-300 disabled:cursor-not-allowed checkout-button"
           disabled={items.length === 0}
-          aria-label="Pagar"
+          aria-label="Checkout"
         >
-          Pagar
+          Checkout
         </button>
       </div>
     </aside>

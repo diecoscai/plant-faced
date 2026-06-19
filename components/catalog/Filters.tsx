@@ -1,5 +1,11 @@
 import { CATEGORIES } from '@/lib/products';
 
+const CATEGORY_LABELS: Record<string, string> = {
+  Camisetas: 'T-Shirts',
+  Buzos: 'Hoodies',
+  Musculosas: 'Tank Tops',
+};
+
 interface FiltersProps {
   search: string;
   category: string;
@@ -19,8 +25,8 @@ export default function Filters({
         type="text"
         value={search}
         onChange={(e) => onSearchChange(e.target.value)}
-        placeholder="Buscar productos..."
-        aria-label="Buscar productos"
+        placeholder="Search products..."
+        aria-label="Search products"
         className="
           flex-1 min-w-[250px]
           px-3 py-[0.8rem]
@@ -31,7 +37,7 @@ export default function Filters({
       <select
         value={category}
         onChange={(e) => onCategoryChange(e.target.value)}
-        aria-label="Filtrar por categoría"
+        aria-label="Filter by category"
         className="
           flex-1 min-w-[250px]
           px-3 py-[0.8rem]
@@ -40,10 +46,10 @@ export default function Filters({
           bg-white
         "
       >
-        <option value="all">Todas las categorías</option>
+        <option value="all">All categories</option>
         {CATEGORIES.map((cat) => (
           <option key={cat} value={cat}>
-            {cat}
+            {CATEGORY_LABELS[cat] ?? cat}
           </option>
         ))}
       </select>

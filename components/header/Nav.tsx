@@ -20,30 +20,30 @@ export default function Nav({ isOpen, onLinkClick }: NavProps) {
         <Link
           href="/"
           className="text-primary no-underline px-2 py-2 transition-colors duration-300 hover:text-secondary focus:text-secondary focus:outline-2 focus:outline-secondary focus:outline-offset-2"
-          aria-label="Inicio"
+          aria-label="Home"
           onClick={onLinkClick}
         >
-          Inicio
+          Home
         </Link>
       </li>
       <li>
         <Link
           href="#products"
           className="text-primary no-underline px-2 py-2 transition-colors duration-300 hover:text-secondary focus:text-secondary focus:outline-2 focus:outline-secondary focus:outline-offset-2"
-          aria-label="Productos"
+          aria-label="Products"
           onClick={onLinkClick}
         >
-          Productos
+          Products
         </Link>
       </li>
       <li>
         <Link
           href="#contact"
           className="text-primary no-underline px-2 py-2 transition-colors duration-300 hover:text-secondary focus:text-secondary focus:outline-2 focus:outline-secondary focus:outline-offset-2"
-          aria-label="Contacto"
+          aria-label="Contact"
           onClick={onLinkClick}
         >
-          Contacto
+          Contact
         </Link>
       </li>
     </ul>
