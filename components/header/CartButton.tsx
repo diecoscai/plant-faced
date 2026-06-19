@@ -12,7 +12,7 @@ export default function CartButton({ onOpenCart }: CartButtonProps) {
   return (
     <button
       className="ml-auto bg-transparent border-none cursor-pointer text-xl px-2 py-2 flex items-center gap-2"
-      aria-label="Abrir carrito"
+      aria-label="Open cart"
       onClick={onOpenCart}
     >
       🛒

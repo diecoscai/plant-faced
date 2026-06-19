@@ -46,7 +46,7 @@ export default function ProductCatalog({ products }: ProductCatalogProps) {
     <section
       id="products"
       className="products px-8 py-8 max-w-[1400px] mx-auto"
-      aria-label="Catalogo de productos"
+      aria-label="Product catalog"
     >
       <Filters
         search={searchInput}

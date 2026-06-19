@@ -28,7 +28,7 @@ export default function CartFeedback() {
       aria-live="polite"
       className="fixed bottom-4 right-4 bg-secondary text-white px-4 py-4 rounded-lg animate-slide-in z-[1100]"
     >
-      ✅ {addNotification.product.name} agregado
+      ✅ {addNotification.product.name} added
     </div>
   );
 }

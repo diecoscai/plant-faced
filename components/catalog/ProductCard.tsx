@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useCart } from '@/lib/cart-context';
 import type { Product } from '@/types/product';
 
@@ -45,22 +46,39 @@ export default function ProductCard({ product }: ProductCardProps) {
         >
           {product.description}
         </p>
-        <button
-          onClick={() => add(product)}
-          aria-label={`Agregar ${product.name} al carrito`}
-          className="
-            bg-secondary text-white
-            border-none
-            py-[0.8rem] px-4
-            rounded-lg
-            cursor-pointer
-            text-base
-            transition-colors duration-300
-            hover:bg-primary
-          "
-        >
-          Agregar al carrito
-        </button>
+        <div className="flex flex-col gap-2">
+          <button
+            onClick={() => add(product)}
+            aria-label={`Add ${product.name} to cart`}
+            className="
+              bg-secondary text-white
+              border-none
+              py-[0.8rem] px-4
+              rounded-lg
+              cursor-pointer
+              text-base
+              transition-colors duration-300
+              hover:bg-primary
+            "
+          >
+            Add to cart
+          </button>
+          <Link
+            href={`/products/${product.id}`}
+            className="
+              block text-center
+              border border-secondary text-secondary
+              py-[0.8rem] px-4
+              rounded-lg
+              text-base
+              no-underline
+              transition-colors duration-300
+              hover:bg-secondary hover:text-white
+            "
+          >
+            View details
+          </Link>
+        </div>
       </div>
     </div>
   );

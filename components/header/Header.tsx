@@ -64,7 +64,7 @@ export default function Header({ onOpenCart }: HeaderProps) {
             'bg-transparent border-none cursor-pointer p-0 z-[1001] relative',
           ].join(' ')}
           id="hamburger"
-          aria-label="Menú móvil"
+          aria-label="Mobile menu"
           aria-expanded={menuOpen}
           onClick={toggleMenu}
         >
@@ -79,7 +79,7 @@ export default function Header({ onOpenCart }: HeaderProps) {
         <Link
           href="/"
           className="flex items-center h-full"
-          aria-label="Ir a la página de inicio"
+          aria-label="Go to home page"
         >
           <Image
             src="/assets/images/logo.webp"

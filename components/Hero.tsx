@@ -20,7 +20,7 @@ export default function Hero() {
         sm:[background-image:url('/assets/images/hero-banner-mobile.webp')]
         md:[background-image:url('/assets/images/hero-banner.webp')]
       "
-      aria-label="Oferta especial de temporada"
+      aria-label="Special seasonal offer"
     >
       <div
         className="
@@ -37,7 +37,7 @@ export default function Hero() {
             mb-6
           "
         >
-          ¡Verano 2025!
+          Summer 2025!
         </h2>
         <p
           className="
@@ -46,7 +46,7 @@ export default function Hero() {
             max-w-[600px]
           "
         >
-          HASTA 30% DE DESCUENTOS EN COLECCIÓN SELECCIONADA
+          UP TO 30% OFF ON SELECTED COLLECTION
         </p>
         <button
           onClick={handleVerColeccion}
@@ -61,9 +61,9 @@ export default function Hero() {
             hover:-translate-y-0.5
             hover:shadow-[0_5px_15px_rgba(0,0,0,0.3)]
           "
-          aria-label="Ver colección de ofertas"
+          aria-label="View collection offers"
         >
-          Ver Colección
+          View Collection
         </button>
       </div>
     </section>
