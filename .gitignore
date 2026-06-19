@@ -10,6 +10,9 @@ node_modules/
 # Ignore build files
 dist/
 build/
+.next/
+out/
+tsconfig.tsbuildinfo
 
 # Ignore development files
 *.log
