@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon" />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <CartProvider>
           <Header />
           {children}
