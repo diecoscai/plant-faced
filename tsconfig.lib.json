@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "./dist/lib/types"
+  },
+  "include": [
+    "components/**/*.ts",
+    "components/**/*.tsx",
+    "lib/cart-context.tsx",
+    "lib/navigation.ts",
+    "lib/products.ts",
+    "lib/catalog-utils.ts",
+    "types/**/*.ts"
+  ]
+}
