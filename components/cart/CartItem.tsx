@@ -45,7 +45,7 @@ export default function CartItem({ item }: CartItemProps) {
         <div className="flex items-center bg-gray-100 rounded-full">
           <button
             className="w-[30px] h-[30px] border-none bg-transparent cursor-pointer text-lg flex items-center justify-center"
-            aria-label="Reducir cantidad"
+            aria-label="Decrease quantity"
             onClick={handleDecrease}
           >
             -
@@ -55,12 +55,12 @@ export default function CartItem({ item }: CartItemProps) {
             className="w-[30px] text-center border-none bg-transparent [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
             value={item.quantity}
             min={1}
-            aria-label="Cantidad"
+            aria-label="Quantity"
             onChange={handleInputChange}
           />
           <button
             className="w-[30px] h-[30px] border-none bg-transparent cursor-pointer text-lg flex items-center justify-center"
-            aria-label="Aumentar cantidad"
+            aria-label="Increase quantity"
             onClick={handleIncrease}
           >
             +
@@ -68,7 +68,7 @@ export default function CartItem({ item }: CartItemProps) {
         </div>
         <button
           className="bg-transparent border-none text-red-500 cursor-pointer px-2 text-xl"
-          aria-label="Eliminar producto"
+          aria-label="Remove item"
           onClick={() => remove(item.id)}
         >
           &times;
